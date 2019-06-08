@@ -9,12 +9,10 @@
     <script src="TemplateData/UnityProgress.js"></script>
     <script src="Build/UnityLoader.js"></script>
     <script>
-        var gameInstance = UnityLoader.instantiate("gameContainer", "Build/WangGang.json", {onProgress: UnityProgress});
-        
-        
 window.addEventListener('load', async () => {
     // Modern dapp browsers...
     if (window.ethereum) {
+      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/WangGang.json", {onProgress: UnityProgress});
     	document.getElementById("metamaskWarning").innerText = '';
         window.web3 = new Web3(ethereum);
         try {
@@ -28,6 +26,7 @@ window.addEventListener('load', async () => {
     }
     // Legacy dapp browsers...
     else if (window.web3) {
+      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/WangGang.json", {onProgress: UnityProgress});
     	document.getElementById("metamaskWarning").innerText = '';
         window.web3 = new Web3(web3.currentProvider);
         // Acccounts always exposed
